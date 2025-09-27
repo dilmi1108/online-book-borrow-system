@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Browse Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="books-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>PagePilot</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="books.html" class="nav-link active">
+                    <i class="fas fa-book"></i>
+                    Browse Books
+                </a>
+                <a href="borrowed.html" class="nav-link">
+                    <i class="fas fa-bookmark"></i>
+                    My Books
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <button class="nav-link logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Browse Books</h1>
+                <p>Discover your next great read</p>
+            </div>
+            
+            <div class="search-filters">
+                <div class="search-container">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search books by title or author...">
+                    </div>
+                </div>
+                
+                <div class="filter-container">
+                    <select id="genreFilter">
+                        <option value="">All Genres</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Biography">Biography</option>
+                        <option value="History">History</option>
+                        <option value="Science">Science</option>
+                        <option value="Self-Help">Self-Help</option>
+                    </select>
+                    
+                    <select id="availabilityFilter">
+                        <option value="">All Books</option>
+                        <option value="available">Available Only</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="books-container">
+                <div class="books-grid" id="booksGrid">
+                    <!-- Example Book Card (populated by JS) -->
+                    <!--
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="<>" alt="Book Cover">
+                        </div>
+                        <div class="book-card-info">
+                            <h3 class="book-title">Book Name</h3>
+                            <p class="book-description">Short description of the book goes here.</p>
+                            <button class="btn-details" onclick="openBookModal(bookId)">View Details</button>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Book Detail Modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Book Title</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="book-details">
+                    <div class="book-image">
+                        <img id="modalImage" src="" alt="Book Cover">
+                    </div>
+                    <div class="book-info">
+                        <p><strong>Author:</strong> <span id="modalAuthor"></span></p>
+                        <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+                        <p><strong>Publication Year:</strong> <span id="modalYear"></span></p>
+                        <p><strong>Available Copies:</strong> <span id="modalCopies"></span></p>
+                        <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                        <div class="book-description">
+                            <h3>Description</h3>
+                            <p id="modalDescription"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="borrowBtn" class="btn-primary" onclick="borrowBook()">Borrow Book</button>
+                <button class="btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

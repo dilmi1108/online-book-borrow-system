@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="profile-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>PagePilot</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    Browse Books
+                </a>
+                <a href="borrowed.html" class="nav-link">
+                    <i class="fas fa-bookmark"></i>
+                    My Books
+                </a>
+                <a href="profile.html" class="nav-link active">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <button class="nav-link logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Profile</h1>
+                <p>Manage your account information</p>
+            </div>
+            
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName">John Doe</h2>
+                            <p>Member ID: <span id="profileMemberId">LIB001</span></p>
+                        </div>
+                    </div>
+                    
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="editFirstName">First Name</label>
+                                    <input type="text" id="editFirstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="editLastName">Last Name</label>
+                                    <input type="text" id="editLastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editEmail">Email Address</label>
+                                <input type="email" id="editEmail" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="displayMemberId">Membership ID</label>
+                                <input type="text" id="displayMemberId" name="membershipId" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Change Password</h3>
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" name="currentPassword">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" name="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmNewPassword">Confirm New Password</label>
+                                    <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Update Profile</button>
+                            <button type="button" class="btn-secondary" onclick="cancelEdit()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="profile-stats">
+                    <h3>Account Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="totalBooksRead">0</div>
+                                <div class="stat-label">Books Read</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="currentlyBorrowed">0</div>
+                                <div class="stat-label">Currently Borrowed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-number" id="memberSince">2024</div>
+                                <div class="stat-label">Member Since</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

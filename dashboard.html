@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>PagePilot</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="books.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    Browse Books
+                </a>
+                <a href="borrowed.html" class="nav-link">
+                    <i class="fas fa-bookmark"></i>
+                    My Books
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <button class="nav-link logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileNav()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <div class="container">
+            <div class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome back, <span id="userName">Member</span>!</h1>
+                    <p>Member ID: <span id="memberId">LIB001</span></p>
+                </div>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="borrowedCount">0</div>
+                        <div class="stat-label">Books Borrowed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="overdueCount">0</div>
+                        <div class="stat-label">Overdue</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon browse-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Browse Books</h3>
+                        <p>Discover new books in our extensive collection</p>
+                        <a href="books.html" class="btn-secondary">Browse Now</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon borrowed-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>My Borrowed Books</h3>
+                        <p>View and manage your currently borrowed books</p>
+                        <a href="borrowed.html" class="btn-secondary">View Books</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon profile-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Manage Profile</h3>
+                        <p>Update your personal information and preferences</p>
+                        <a href="profile.html" class="btn-secondary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="activityList">
+                    <!-- Activity items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

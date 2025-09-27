@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="signup-page">
+    <div class="container">
+        <div class="signup-container">
+            <div class="signup-header">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                    <h1>PagePilot</h1>
+                </div>
+                <p>Join our community of readers</p>
+            </div>
+            
+            <form id="signupForm" class="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <div class="input-container">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <div class="input-container">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <div class="input-container">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="membershipId">Membership ID</label>
+                    <div class="input-container">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="membershipId" name="membershipId" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupPassword" name="password" required>
+                        </div>
+                        <div class="password-strength" id="passwordStrength"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-primary">Create Account</button>
+                
+                <div class="form-footer">
+                    <p>Already have an account? <a href="index.html">Sign in here</a></p>
+                </div>
+            </form>
+            
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
